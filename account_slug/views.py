@@ -8,37 +8,37 @@ from .models import Account
 
 class AccountList(ListView):
     context_object_name = 'all_account'
-    template_name = 'account_cbv/account_list.html'
+    template_name = 'account_slug/account_list.html'
     model = Account
 
 
 class AccountCreate(CreateView):
-    template_name = 'account_cbv/account_form.html'
+    template_name = 'account_slug/account_form.html'
     model = Account
     fields = ['title', 'email', 'username', 'name']
-    success_url = reverse_lazy('account_cbv:account_list')
+    success_url = reverse_lazy('account_slug:account_list')
+
 
 class AccountUpdate(UpdateView):
-    template_name = 'account_cbv/account_form.html'
+    template_name = 'account_slug/account_form.html'
     model = Account
     fields = ['title', 'email', 'username', 'name']
-    success_url = reverse_lazy('account_cbv:account_list')
+    success_url = reverse_lazy('account_slug:account_list')
 
 
 class AccountDelete(DeleteView):
-    template_name = 'account_cbv/account_delete.html'
+    template_name = 'account_slug/account_delete.html'
     model = Account
-    success_url = reverse_lazy('account_cbv:account_list')
+    success_url = reverse_lazy('account_slug:account_list')
 
 
 class AccountDetail(ListView):
-    template_name = 'account_cbv/account_detail.html'
+    template_name = 'account_slug/account_detail.html'
     context_object_name = 'account_detail'
 
-
     def get_queryset(self):
-        self.account = Account.objects.get(id=self.kwargs['pk'])
-        return Account.objects.get(id=self.kwargs['pk'])
+        self.account = Account.objects.get(title=self.kwargs['slug'])
+        return Account.objects.get(title=self.kwargs['slug'])
 
 
 

@@ -1,11 +1,12 @@
-<h1>Account Cbv</h1>
+<h1>Account Slug</h1>
+
 <h1>Your {{ account_detail.title|capfirst }} account details</h1>
 
 <p>The title of this account is {{ account_detail.title }}.</p>
 <p>The username of this account is {{ account_detail.username }}.</p>
 <p>The email of this account is {{ account_detail.email }}.</p>
 <p>The name of this account is {{ account_detail.name }}.</p>
- <a href="{% url 'account_cbv:account_edit' account_detail.id %}">edit</a>
-    <a href="{% url 'account_cbv:account_delete' account_detail.id %}">delete</a>
+ <a href="{% url 'account_slug:account_edit' account_detail.title %}">edit</a>
+    <a href="{% url 'account_slug:account_delete' account_detail.title %}">delete</a>
 
 

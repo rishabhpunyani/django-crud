@@ -1,0 +1,10 @@
+<h1>Account Slug</h1>
+<h1>list of all account</h1>
+<ol>
+{% for account in all_account %}
+    <a href="{% url 'account_slug:account_detail' account.title %}"><li>{{ account.title }}</li></a>
+     <br>
+{% endfor %}
+</ol>
+    <a href="{% url 'account_slug:account_create' %}">create new account</a>
+
