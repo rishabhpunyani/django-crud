@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 
 
 class Account(models.Model):
+
     title = models.CharField(max_length=100)
     username = models.CharField(max_length=100, blank=True)
     email = models.EmailField(blank=True)
@@ -17,5 +18,5 @@ class Account(models.Model):
         return slugify(self.title)
 
     def get_absolute_url(self):
-        return reverse('account_slug: account_edit', [self.slug])
+        return reverse('account_slug: account_edit', [self.title_slug])
 

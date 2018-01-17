@@ -18,6 +18,7 @@ class AccountCreate(CreateView):
     fields = ['title', 'email', 'username', 'name']
     success_url = reverse_lazy('account_cbv:account_list')
 
+
 class AccountUpdate(UpdateView):
     template_name = 'account_cbv/account_form.html'
     model = Account

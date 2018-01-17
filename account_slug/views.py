@@ -22,8 +22,9 @@ class AccountCreate(CreateView):
 class AccountUpdate(UpdateView):
     template_name = 'account_slug/account_form.html'
     model = Account
-    fields = ['title', 'email', 'username', 'name']
+    fields = ['email', 'username', 'name']
     success_url = reverse_lazy('account_slug:account_list')
+    slug_field = 'slug'
 
 
 class AccountDelete(DeleteView):

@@ -8,4 +8,5 @@ urlpatterns = [
   url(r'^edit/(?P<pk>\d+)$', views.AccountUpdate.as_view(), name='account_edit'),
   url(r'^delete/(?P<pk>\d+)$', views.AccountDelete.as_view(), name='account_delete'),
   url(r'^detail/(?P<pk>\d+)$', views.AccountDetail.as_view(), name='account_detail'),
+
 ]
